@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cf10月活动 - 穿越火线十周年庆典专题与活动指南</title>
+    <meta name="description" content="为您提供穿越火线10月活动最新资讯、时间表及玩法攻略。涵盖十周年庆典、新枪械测评、福利领取及赛季更新详情。">
+    <meta name="keywords" content="cf10月活动,穿越火线,cf十周年,cf活动攻略,穿越火线十月">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6600;
+            --secondary-color: #1a1a1a;
+            --bg-color: #f4f5f7;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --header-height: 70px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding-top: var(--header-height);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--primary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-login {
+            padding: 8px 20px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255, 102, 0, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 50px;
+        }
+
+        .hero-tag {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cccccc;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        /* Activity Grid */
+        .section-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 25px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--secondary-color);
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 5px;
+            height: 24px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card-img {
+            height: 180px;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: rgba(0,0,0,0.7);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .card-date {
+            font-size: 12px;
+            color: #999;
+        }
+
+        .card-btn {
+            color: var(--primary-color);
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* Info Section */
+        .info-section {
+            background-color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .info-list {
+            display: grid;
+            gap: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: var(--border-radius);
+        }
+
+        .info-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 102, 0, 0.1);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .info-content h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .info-content p {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Guide/FAQ */
+        .guide-section {
+            padding: 60px 0;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq-question:hover {
+            background-color: #fcfcfc;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            font-size: 14px;
+            display: none;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item.active .faq-question::before {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #999;
+            padding: 50px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none; /* Simplified mobile nav for this demo */
+            }
+            
+            .header-inner {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>CF</span>玩家攻略站
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">活动中心</a></li>
+                <li><a href="#">版本更新</a></li>
+                <li><a href="#">武器库</a></li>
+                <li><a href="#">赛事资讯</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="#" class="btn-login">登录</a>
+            <a href="#" class="btn-primary">进入游戏</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <span class="hero-tag">十周年庆典</span>
+                <h1>穿越火线十周年<br>金秋十月火力全开</h1>
+                <p>2024年10月穿越火线特别活动开启，包含“十周年庆典通行证”、“双倍经验卡”及限定武器“黑龙骑士”限时返场。立即参与，赢取绝版道具！</p>
+                <div class="hero-buttons">
+                    <a href="#" class="btn-primary">查看活动详情</a>
+                    <a href="#" class="btn-login" style="background:transparent; border:1px solid rgba(255,255,255,0.3);">活动日历</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/seed/cf10th/600/400" alt="CF十周年庆典活动海报">
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity List -->
+    <section class="container">
+        <div class="section-title">
+            <h2>本月热门活动</h2>
+            <a href="#" class="view-all">查看全部 &rarr;</a>
+        </div>
+
+        <div class="activity-grid">
+            <!-- Card 1 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">限时返场</span>
+                    <img src="https://picsum.photos/seed/gun1/400/250" alt="黑龙骑士枪械">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">经典武器“黑龙骑士”限时返场</h3>
+                    <p class="card-desc">十周年庆典特别返场，拥有霸气外观与卓越属性，限时7天，错过再等一年。</p>
+                    <div class="card-footer">
+                        <span class="card-date">2024.10.01 - 10.31</span>
+                        <a href="#" class="card-btn">查看详情 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">福利活动</span>
+                    <img src="https://picsum.photos/seed/points/400/250" alt="军需抽奖">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">十周年军需：豪礼免费抽</h3>
+                    <p class="card-desc">每日登录即可获得免费抽奖机会，更有机会抽取“雷神·觉醒”等高级时装。</p>
+                    <div class="card-footer">
+                        <span class="card-date">2024.10.05 - 10.25</span>
+                        <a href="#" class="card-btn">参与抽奖 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">经验加成</span>
+                    <img src="https://picsum.photos/seed/exp/400/250" alt="双倍经验">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">十周年双倍经验狂欢周</h3>
+                    <p class="card-desc">活动期间，参与团队竞技、爆破模式均可获得双倍经验值，助你快速升级。</p>
+                    <div class="card-footer">
+                        <span class="card-date">2024.10.10 - 10.17</span>
+                        <a href="#" class="card-btn">查看规则 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Card 4 -->
+            <article class="card">
+                <div class="card-img">
+                    <span class="card-badge">签到奖励</span>
+                    <img src="https://picsum.photos/seed/sign/400/250" alt="签到活动">
+                </div>
+                <div class="card-content">
+                    <h3 class="card-title">十周年签到领好礼</h3>
+                    <p class="card-desc">连续签到7天、14天、21天，即可领取永久角色、多倍经验卡及稀有徽章。</p>
+                    <div class="card-footer">
+                        <span class="card-date">2024.10.01 - 10.31</span>
+                        <a href="#" class="card-btn">立即签到 &rarr;</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="info-section">
+        <div class="container info-grid">
+            <div>
+                <div class="section-title" style="margin-bottom: 20px;">
+                    <h2>活动指南</h2>
+                </div>
+                <div class="info-list">
+                    <div class="info-item">
+                        <div class="info-icon">1</div>
+                        <div class="info-content">
+                            <h3>登录领取福利</h3>
+                            <p>活动期间登录游戏，点击主界面“十周年”活动图标即可领取每日登录礼包。</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">2</div>
+                        <div class="info-content">
+                            <h3>参与军需抽奖</h3>
+                            <p>使用“十周年庆典币”在军需界面进行抽奖，概率掉落限定武器与角色时装。</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">3</div>
+                        <div class="info-content">
+                            <h3>完成每日任务</h3>
+                            <p>在活动页面完成指定对局（如爆破、团队），积累活跃值兑换稀有奖励。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <img src="https://picsum.photos/seed/cfmap/600/350" alt="CF游戏地图展示" style="width:100%; border-radius:8px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="container guide-section">
+        <div class="section-title">
+            <h2>常见问题解答</h2>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <div class="faq-question">十周年活动具体持续多长时间？</div>
+                <div class="faq-answer">
+                    本次cf10月活动主要集中在10月1日至10月31日之间。部分限时返场的武器（如黑龙骑士）将于10月31日24:00下架，请各位玩家注意时间节点。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何获取“十周年庆典币”？</div>
+                <div class="faq-answer">
+                    庆典币主要通过每日登录、参与军需抽奖以及完成活动任务获得。充值VIP或购买特定礼包也可获得额外庆典币。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">双倍经验活动是否包含所有模式？</div>
+                <div class="faq-answer">
+                    本次双倍经验活动主要覆盖团队竞技、爆破模式及生化模式。个人竞技模式暂不享受双倍经验加成。
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站简介</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">加入我们</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">活动中心</a></li>
+                    <li><a href="#">游戏下载</a></li>
+                    <li><a href="#">武器图鉴</a></li>
+                    <li><a href="#">玩家社区</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>玩家服务</h4>
+                <ul>
+                    <li><a href="#">账号安全</a></li>
+                    <li><a href="#">充值帮助</a></li>
+                    <li><a href="#">客服中心</a></li>
+                    <li><a href="#">举报中心</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <p style="font-size:14px; color:#888;">第一时间获取cf10月活动最新资讯与攻略。</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 CF玩家攻略站 版权所有 | 本站内容仅供玩家参考，非腾讯官方页面</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 简单的FAQ折叠逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // 关闭其他打开的项
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // 切换当前项
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+                          </html>
