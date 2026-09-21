@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LOL转区全攻略：提供国服、亚服、台服账号迁移详细流程、价格对比、防封号指南及热门转移工具推荐，助您轻松实现跨服游戏体验。">
+    <meta name="keywords" content="lol转区,LOL账号迁移,LOL跨服转移,国服转亚服,LOL转服工具">
+    <title>lol转区-国服跨服账号迁移与安全指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #c89b3c;
+            --primary-dark: #a67c32;
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --bg-hover: #2a2a2a;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --border: #333;
+            --success: #4caf50;
+            --danger: #f44336;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        ul { list-style: none; }
+
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .btn-cta {
+            background-color: var(--primary);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .btn-cta:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/lolmap/1920/600') center/cover no-repeat;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero h1 span { color: var(--primary); }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #ccc;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .search-bar {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+        }
+
+        .search-bar input {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 12px 30px;
+            border-radius: 4px;
+            border: none;
+            background: var(--primary);
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Section Title */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 15px;
+        }
+
+        .section-title h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Guide Steps */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 60px;
+        }
+
+        .step-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .step-card::before {
+            content: attr(data-step);
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 3rem;
+            font-weight: 900;
+            color: rgba(255,255,255,0.03);
+            z-index: 0;
+        }
+
+        .step-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .step-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            z-index: 1;
+            position: relative;
+        }
+
+        .step-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            z-index: 1;
+            position: relative;
+        }
+
+        /* Server Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 60px;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comparison-table th {
+            background-color: var(--bg-card);
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background-color: var(--bg-hover);
+        }
+
+        .status-dot {
+            height: 10px;
+            width: 10px;
+            background-color: var(--success);
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+
+        /* Tools Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .tool-card {
+            background: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .tool-img {
+            height: 160px;
+            background-color: #333;
+            position: relative;
+        }
+        
+        .tool-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .tool-content {
+            padding: 20px;
+        }
+
+        .tool-tag {
+            font-size: 0.75rem;
+            color: var(--primary);
+            background: rgba(200, 155, 60, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .tool-content h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .tool-content p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .tool-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .price {
+            color: var(--primary);
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--bg-card);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-question:hover {
+            background-color: var(--bg-hover);
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 300px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #0a0a0a;
+            border-top: 1px solid var(--border);
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 1.8rem; }
+            .search-bar { flex-direction: column; }
+            .search-bar button { width: 100%; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+            lol转区
+        </a>
+        <nav class="nav-links">
+            <a href="#guide" class="active">转区攻略</a>
+            <a href="#servers">服务器对比</a>
+            <a href="#tools">转移工具</a>
+            <a href="#faq">常见问题</a>
+        </nav>
+        <a href="#tools" class="btn-cta">立即查询</a>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>轻松实现 <span>lol转区</span>，畅享跨服游戏体验</h1>
+        <p>无论是追求更低的段位竞争、更活跃的玩家社区，还是特殊的游戏福利，我们提供最新、最全的LOL跨服转移指南与工具。</p>
+        <div class="search-bar">
+            <input type="text" placeholder="输入您的当前大区（如：艾欧尼亚）">
+            <button>查询支持情况</button>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section id="guide" class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>官方转区流程</h2>
+                <p>了解最新的系统机制与操作步骤</p>
+            </div>
+        </div>
+
+        <div class="steps-grid">
+            <article class="step-card" data-step="01">
+                <div class="step-icon">📋</div>
+                <h3>准备与检查</h3>
+                <p>确保账号密码正确，绑定手机与邮箱。检查账号内无未处理的违规处罚，且符合转移条件（通常需要至少达到黑铁段位）。</p>
+            </article>
+            <article class="step-card" data-step="02">
+                <div class="step-icon">🔗</div>
+                <h3>绑定新大区</h3>
+                <p>在游戏客户端登录目标大区，进行首次登录并绑定游戏账号。这一步是激活目标服务器转移资格的关键。</p>
+            </article>
+            <article class="step-card" data-step="03">
+                <div class="step-icon">💰</div>
+                <h3>支付转移费用</h3>
+                <p>通过游戏内商城或网页支付转移费用（通常为6300点券或等值现金）。费用会根据大区距离和当前赛季情况浮动。</p>
+            </article>
+            <article class="step-card" data-step="04">
+                <div class="step-icon">🚀</div>
+                <h3>执行转移操作</h3>
+                <p>在网页端进入转移中心，提交申请。等待系统处理（通常在24小时内），处理完成后即可在新大区登录并使用原有数据。</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- Server Comparison -->
+    <section id="servers" class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>热门服务器对比</h2>
+                <p>分析不同大区的环境与特点，选择最适合您的战场</p>
+            </div>
+        </div>
+
+        <div style="overflow-x: auto;">
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>大区名称</th>
+                        <th>活跃度</th>
+                        <th>段位分布</th>
+                        <th>特色/优势</th>
+                        <th>当前状态</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>亚服</strong></td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>中低段位较多</td>
+                        <td>环境相对宽松，匹配快，适合找回手感或寻求轻松对局。</td>
+                        <td><span class="status-dot"></span>开放</td>
+                    </tr>
+                    <tr>
+                        <td><strong>台服</strong></td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>中高段位较多</td>
+                        <td>拥有独特的英雄平衡与皮肤，中文环境，玩家素质较高。</td>
+                        <td><span class="status-dot"></span>开放</td>
+                    </tr>
+                    <tr>
+                        <td><strong>韩服</strong></td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                        <td>极高（钻石以上多）</td>
+                        <td>版本更新最快，高手云集，适合追求极致操作与版本理解。</td>
+                        <td><span class="status-dot"></span>开放</td>
+                    </tr>
+                    <tr>
+                        <td><strong>港澳服</strong></td>
+                        <td>⭐⭐⭐</td>
+                        <td>中段位为主</td>
+                        <td>英文界面，竞争适中，部分皮肤价格有优势。</td>
+                        <td><span class="status-dot"></span>开放</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Tools & Resources -->
+    <section id="tools" class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>转区辅助工具</h2>
+                <p>精选安全可靠的第三方辅助与查询工具</p>
+            </div>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Tool 1 -->
+            <div class="tool-card">
+                <div class="tool-img">
+                    <img src="https://picsum.photos/seed/lolt1/400/250" alt="转区查询工具">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-tag">官方工具</span>
+                    <h3>拳头游戏转区中心</h3>
+                    <p>官方唯一授权的转移平台，支持国服与亚服、台服之间的数据迁移。数据安全有保障，无封号风险。</p>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="#" class="btn-cta" style="padding: 4px 12px; font-size: 0.8rem;">前往官网</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 2 -->
+            <div class="tool-card">
+                <div class="tool-img">
+                    <img src="https://picsum.photos/seed/lolt2/400/250" alt="价格对比工具">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-tag">辅助查询</span>
+                    <h3>跨服转区价格计算器</h3>
+                    <p>实时更新各服务器之间的转移费用，支持查询历史价格走势，助您把握最佳转移时机。</p>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="#" class="btn-cta" style="padding: 4px 12px; font-size: 0.8rem;">立即查询</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tool 3 -->
+            <div class="tool-card">
+                <div class="tool-img">
+                    <img src="https://picsum.photos/seed/lolt3/400/250" alt="防封号指南">
+                </div>
+                <div class="tool-content">
+                    <span class="tool-tag">安全指南</span>
+                    <h3>转区防封号指南</h3>
+                    <p>详细解析转区过程中的注意事项，包括IP环境、设备指纹检测规避以及转移后的账号保护建议。</p>
+                    <div class="tool-footer">
+                        <span class="price">免费</span>
+                        <a href="#" class="btn-cta" style="padding: 4px 12px; font-size: 0.8rem;">阅读指南</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container">
+        <div class="section-header">
+            <div class="section-title">
+                <h2>常见问题解答</h2>
+                <p>解决您在转区过程中遇到的疑问</p>
+            </div>
+        </div>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    转区后英雄和皮肤会全部保留吗？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    是的，官方转区会保留您的所有英雄（包括体验英雄）、皮肤、符文页、熟练度以及大部分通行证进度。但段位重置为黑铁，且部分跨服独有的活动道具可能无法转移。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    转区费用是多少？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    费用根据服务器距离而定。例如国服转亚服通常为6300点券，转台服可能更高。具体价格请以官网页面显示为准，且会随赛季更新调整。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    转区需要多长时间？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    提交申请后，系统通常会在24小时内完成处理。高峰期（如赛季末）可能需要等待更久。处理期间您无法登录原大区。
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    转区失败怎么办？
+                    <span class="faq-icon">▼</span>
+                </div>
+                <div class="faq-answer">
+                    如果转移失败，费用通常会原路退回。请检查账号是否存在违规记录、是否绑定了手机以及是否满足最低段位要求。
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <div class="logo" style="margin-bottom: 15px;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 7l10 5 10-5-10-5zm0 9l2.5-1.25L12 8.5l-2.5 1.25L12 11zm0 2.5l-5-2.5-5 2.5L12 22l10-8.5-5-2.5-5 2.5z"/></svg>
+                lol转区
+            </div>
+            <p style="color: #666; font-size: 0.9rem;">专注提供最实用的英雄联盟跨服转移指南与资讯。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速导航</h4>
+            <ul>
+                <li><a href="#guide">转区流程</a></li>
+                <li><a href="#servers">服务器对比</a></li>
+                <li><a href="#tools">转移工具</a></li>
+                <li><a href="#">帮助中心</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>热门服务</h4>
+            <ul>
+                <li><a href="#">国服转亚服</a></li>
+                <li><a href="#">国服转台服</a></li>
+                <li><a href="#">价格查询</a></li>
+                <li><a href="#">防封教程</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>联系我们</h4>
+            <ul>
+                <li><a href="#">用户协议</a></li>
+                <li><a href="#">隐私政策</a></li>
+                <li><a href="#">免责声明</a></li>
+                <li style="color: #666; font-size: 0.85rem;">Email: support@loltransfer.example</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2023 lol转区指南. 本站为攻略与工具导航平台，非官方网站。</p>
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
