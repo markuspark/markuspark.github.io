@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云顶之弈装备 - 装备合成表、羁绊效果与实战出装策略指南</title>
+    <meta name="description" content="云顶之弈装备全攻略：包含最新赛季装备合成公式、装备效果详解、站位出装推荐、装备克制关系及装备优先级分析，助你轻松上分。">
+    <meta name="keywords" content="云顶之弈装备, 云顶之弈合成表, 云顶之弈出装, 云顶之弈神器, 云顶之弈羁绊">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #1d4ed8;
+            --accent: #f59e0b;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --border: #e5e7eb;
+            --radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: var(--bg-card);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title span {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            font-weight: 400;
+            border-bottom: none;
+            margin: 0;
+        }
+
+        /* Equipment Grid */
+        .equip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .equip-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 20px 10px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .equip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .equip-icon {
+            width: 64px;
+            height: 64px;
+            background: #f8fafc;
+            border-radius: 50%;
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            border: 2px solid var(--border);
+        }
+
+        .equip-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .equip-type {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            background: #eff6ff;
+            color: var(--primary);
+            padding: 2px 6px;
+            border-radius: 4px;
+            display: inline-block;
+        }
+
+        /* Synthesis Table */
+        .synthesis-container {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background-color: #f9fafb;
+        }
+
+        .synthesis-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .item-icon {
+            width: 32px;
+            height: 32px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plus-icon {
+            color: var(--text-muted);
+            font-weight: bold;
+        }
+
+        /* Recommended Builds */
+        .builds-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .build-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .build-header {
+            padding: 16px;
+            background: #f9fafb;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .build-hero {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .build-tags span {
+            font-size: 0.75rem;
+            background: #ecfdf5;
+            color: #059669;
+            padding: 2px 8px;
+            border-radius: 12px;
+            margin-left: 6px;
+        }
+
+        .build-content {
+            padding: 20px;
+        }
+
+        .champion-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .champion-tag {
+            padding: 4px 10px;
+            background: #eff6ff;
+            color: var(--primary-dark);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .equipment-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .equip-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .equip-row .item-icon {
+            width: 40px;
+            height: 40px;
+        }
+
+        .equip-row .item-name {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Tips & FAQ */
+        .tips-list {
+            list-style: none;
+        }
+
+        .tips-list li {
+            background: var(--bg-card);
+            padding: 16px;
+            margin-bottom: 12px;
+            border-radius: var(--radius);
+            border-left: 4px solid var(--accent);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .tips-list li strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        /* Footer */
+        footer {
+            background: #111827;
+            color: #d1d5db;
+            padding: 40px 0;
+            margin-top: 60px;
+            font-size: 0.9rem;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            color: #9ca3af;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 12px 0;
+                gap: 12px;
+            }
+            
+            nav ul {
+                gap: 16px;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .equip-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .equip-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .section-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                ⚔️ 云顶<span>装备</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#all" class="active">装备大全</a></li>
+                    <li><a href="#synthesis">合成表</a></li>
+                    <li><a href="#builds">出装推荐</a></li>
+                    <li><a href="#guide">玩法指南</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>云顶之弈装备全攻略</h1>
+                <p>掌握核心装备合成公式、最佳出装策略与站位技巧，构建无敌阵容。</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 装备分类导航 -->
+            <section id="all">
+                <div class="section-title">
+                    <h2>装备分类</h2>
+                    <span>按类型快速筛选</span>
+                </div>
+                <div class="equip-grid">
+                    <div class="equip-card" onclick="filterEquip('physical')">
+                        <div class="equip-icon">⚔️</div>
+                        <div class="equip-name">物理</div>
+                        <div class="equip-type">物理装备</div>
+                    </div>
+                    <div class="equip-card" onclick="filterEquip('magic')">
+                        <div class="equip-icon">✨</div>
+                        <div class="equip-name">魔法</div>
+                        <div class="equip-type">魔法装备</div>
+                    </div>
+                    <div class="equip-card" onclick="filterEquip('trinket')">
+                        <div class="equip-icon">💍</div>
+                        <div class="equip-name">消耗品</div>
+                        <div class="equip-type">消耗装备</div>
+                    </div>
+                    <div class="equip-card" onclick="filterEquip('unique')">
+                        <div class="equip-icon">🏆</div>
+                        <div class="equip-name">神器</div>
+                        <div class="equip-type">唯一装备</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 装备合成表 -->
+            <section id="synthesis">
+                <div class="section-title">
+                    <h2>装备合成表</h2>
+                    <span>点击装备查看详情</span>
+                </div>
+                <div class="synthesis-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 40%">成品装备</th>
+                                <th style="width: 40%">所需材料</th>
+                                <th style="width: 20%">类型</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🗡️</div>无尽之刃</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">🗡️</div>暴风大剑</div> + <div class="synthesis-item"><div class="item-icon">🗡️</div>拳套</div></td>
+                                <td><span class="equip-type">物理</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🛡️</div>守护天使</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">🛡️</div>锁子甲</div> + <div class="synthesis-item"><div class="item-icon">🛡️</div>眼泪</div></td>
+                                <td><span class="equip-type">魔法</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">👢</div>疾射火炮</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">👢</div>反曲之弓</div> + <div class="synthesis-item"><div class="item-icon">👢</div>负极斗篷</div></td>
+                                <td><span class="equip-type">物理</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🧣</div>珠光护手</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">🧣</div>眼泪</div> + <div class="synthesis-item"><div class="item-icon">🧣</div>斗篷</div></td>
+                                <td><span class="equip-type">魔法</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🩸</div>巨人杀手</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">🗡️</div>暴风大剑</div> + <div class="synthesis-item"><div class="item-icon">🛡️</div>锁子甲</div></td>
+                                <td><span class="equip-type">物理</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">⚡</div>海克斯科技枪刃</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">🗡️</div>暴风大剑</div> + <div class="synthesis-item"><div class="item-icon">🧣</div>眼泪</div></td>
+                                <td><span class="equip-type">魔法</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🧪</div>鬼索的狂暴之刃</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">👢</div>反曲之弓</div> + <div class="synthesis-item"><div class="item-icon">👢</div>眼泪</div></td>
+                                <td><span class="equip-type">物理</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🧪</div>斯塔缇克电刃</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">👢</div>反曲之弓</div> + <div class="synthesis-item"><div class="item-icon">👢</div>斗篷</div></td>
+                                <td><span class="equip-type">物理</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🩸</div>卢安娜的飓风</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">👢</div>反曲之弓</div> + <div class="synthesis-item"><div class="item-icon">👢</div>眼泪</div></td>
+                                <td><span class="equip-type">物理</span></td>
+                            </tr>
+                            <tr>
+                                <td><div class="synthesis-item"><div class="item-icon">🛡️</div>救赎</div></td>
+                                <td><div class="synthesis-item"><div class="item-icon">🛡️</div>锁子甲</div> + <div class="synthesis-item"><div class="item-icon">🛡️</div>斗篷</div></td>
+                                <td><span class="equip-type">魔法</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 出装推荐 -->
+            <section id="builds">
+                <div class="section-title">
+                    <h2>热门阵容出装推荐</h2>
+                    <span>针对当前版本强势英雄</span>
+                </div>
+                <div class="builds-grid">
+                    <!-- Card 1 -->
+                    <div class="build-card">
+                        <div class="build-header">
+                            <div class="build-hero">孙悟空 (至尊机甲)</div>
+                            <div class="build-tags">
+                                <span>物理C位</span>
+                                <span>版本T0</span>
+                            </div>
+                        </div>
+                        <div class="build-content">
+                            <div class="champion-list">
+                                <span class="champion-tag">孙悟空</span>
+                                <span class="champion-tag">蔚</span>
+                                <span class="champion-tag">慎</span>
+                            </div>
+                            <div class="equipment-list">
+                                <div class="equip-row">
+                                    <div class="item-icon">🗡️</div>
+                                    <div class="item-name">无尽之刃 + 暴风大剑</div>
+                                </div>
+                                <div class="equip-row">
+                                    <div class="item-icon">🛡️</div>
+                                    <div class="item-name">泰坦的坚决 + 反曲之弓</div>
+                                </div>
+                                <div class="equip-row">
+                                    <div class="item-icon">🛡️</div>
+                                    <div class="item-name">饮血剑 + 暴风大剑</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="build-card">
+                        <div class="build-header">
+                            <div class="build-hero">艾希 (神射)</div>
+                            <div class="build-tags">
+                                <span>远程物理</span>
+                                <span>持续输出</span>
+                            </div>
+                        </div>
+                        <div class="build-content">
+                            <div class="champion-list">
+                                <span class="champion-tag">艾希</span>
+                                <span class="champion-tag">金克丝</span>
+                                <span class="champion-tag">厄斐琉斯</span>
+                            </div>
+                            <div class="equipment-list">
+                                <div class="equip-row">
+                                    <div class="item-icon">👢</div>
+                                    <div class="item-name">疾射火炮 + 反曲之弓</div>
+                                </div>
+                                <div class="equip-row">
+                                    <div class="item-icon">🗡️</div>
+                                    <div class="item-name">无尽之刃 + 拳套</div>
+                                </div>
+                                <div class="equip-row">
+                                    <div class="item-icon">🩸</div>
+                                    <div class="item-name">巨人杀手 + 暴风大剑</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="build-card">
+                        <div class="build-header">
+                            <div class="build-hero">丽桑卓 (极地)</div>
+                            <div class="build-tags">
+                                <span>控制核心</span>
+                                <span>魔法C位</span>
+                            </div>
+                        </div>
+                        <div class="build-content">
+                            <div class="champion-list">
+                                <span class="champion-tag">丽桑卓</span>
+                                <span class="champion-tag">婕拉</span>
+                                <span class="champion-tag">千珏</span>
+                            </div>
+                            <div class="equipment-list">
+                                <div class="equip-row">
+                                    <div class="item-icon">🧪</div>
+                                    <div class="item-name">珠光护手 + 眼泪</div>
+                                </div>
+                                <div class="equip-row">
+                                    <div class="item-icon">🧪</div>
+                                    <div class="item-name">灭世者的死亡之帽 + 眼泪</div>
+                                </div>
+                                <div class="equip-row">
+                                    <div class="item-icon">🛡️</div>
+                                    <div class="item-name">莫雷洛秘典 + 斗篷</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 玩法指南与FAQ -->
+            <section id="guide">
+                <div class="section-title">
+                    <h2>装备选择策略与FAQ</h2>
+                    <span>提升运营效率</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+                    <div>
+                        <ul class="tips-list">
+                            <li>
+                                <strong>优先合成核心装备</strong>
+                                在游戏前期（3-1阶段），尽量凑齐两件基础装备（如暴风大剑+拳套）。优先合成物理或法术核心装备，不要为了合成高级装备而浪费散件。
+                            </li>
+                            <li>
+                                <strong>站位决定输出环境</strong>
+                                给射手（如艾希、金克丝）配备“疾射火炮”时，必须将其放在后排边缘，确保攻击距离最大化。给坦克配备“救赎”时，建议放在前排中间位置。
+                            </li>
+                            <li>
+                                <strong>装备分流与经济</strong>
+                                如果场上有多名强力物理输出（如孙悟空、蔚），请尽量将“无尽之刃”和“巨人杀手”等物理装分给不同的人，避免资源浪费。
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="margin-bottom: 16px; font-size: 1.1rem;">常见问题</h3>
+                        <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid var(--border); margin-bottom: 12px;">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 8px; color: var(--primary-dark);">如何判断该给谁出装？</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">观察阵容羁绊。如果是物理阵容（如极客、机甲），优先给物理装；如果是法师阵容（如灵魂莲华、九五至尊），优先给法术装。没有羁绊时，看谁伤害最高。</p>
+                        </div>
+                        <div style="background: white; padding: 16px; border-radius: 8px; border: 1px solid var(--border);">
+                            <h4 style="font-size: 0.95rem; margin-bottom: 8px; color: var(--primary-dark);">什么是“神器”装备？</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">神器装备（如狂徒铠甲、泰坦的坚决）通常在装备商店中单独刷新，通常需要5个金币购买。它们提供独特的被动效果，是后期转型的关键。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col" style="flex: 2; min-width: 250px;">
+                <h4>云顶之弈装备指南</h4>
+                <p style="margin-top: 8px; color: #9ca3af; line-height: 1.6;">
+                    本站提供最全面的云顶之弈装备合成表、出装推荐及阵容搭配策略。致力于帮助玩家快速掌握装备逻辑，提升段位。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#all">装备大全</a></li>
+                    <li><a href="#synthesis">合成公式</a></li>
+                    <li><a href="#builds">出装推荐</a></li>
+                    <li><a href="#guide">新手教程</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>版本信息</h4>
+                <ul>
+                    <li>数据来源：官方版本</li>
+                    <li>更新日期：2023年10月</li>
+                    <li>免责声明：非腾讯官方，仅供学习参考</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #374151; color: #6b7280; font-size: 0.8rem;">
+            &copy; 2023 云顶之弈装备指南. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // 简单的交互脚本：点击装备分类高亮
+        function filterEquip(type) {
+            // 这里仅做视觉反馈演示，实际应用中可过滤表格内容
+            const cards = document.querySelectorAll('.equip-card');
+            cards.forEach(card => {
+                if (type === 'physical') {
+                    card.style.borderColor = card.querySelector('.equip-type').innerText.includes('物理') ? 'var(--primary)' : 'var(--border)';
+                } else if (type === 'magic') {
+                    card.style.borderColor = card.querySelector('.equip-type').innerText.includes('魔法') ? 'var(--primary)' : 'var(--border)';
+                } else {
+                    card.style.borderColor = 'var(--border)';
+                }
+            });
+        }
+
+        // 导航栏平滑滚动
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+                                      </html>
