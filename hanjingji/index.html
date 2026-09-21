@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="韩京姬官方网站，展示韩国漫画家韩京姬的代表作品、艺术风格、创作历程及粉丝互动信息。">
+    <meta name="keywords" content="韩京姬, 韩国漫画家, 韩京姬作品, 韩京姬画集, 漫画, 网络漫画">
+    <title>韩京姬-韩国知名漫画家代表作品与艺术风格鉴赏</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e74c3c;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-radius: 8px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://picsum.photos/seed/manga_art/1200/600');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2;
+            mix-blend-mode: overlay;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 5px solid var(--accent-color);
+            color: var(--primary-color);
+        }
+
+        /* Artist Profile */
+        .artist-profile {
+            display: flex;
+            gap: 30px;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            align-items: center;
+        }
+
+        .artist-avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #f0f0f0;
+            flex-shrink: 0;
+        }
+
+        .artist-info h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .artist-tags {
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eee;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-right: 5px;
+            color: var(--text-light);
+        }
+
+        /* Works Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .work-cover {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .work-info {
+            padding: 15px;
+        }
+
+        .work-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .work-meta {
+            font-size: 12px;
+            color: var(--text-light);
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .sidebar-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .list-icon {
+            width: 30px;
+            height: 30px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 12px;
+            color: var(--text-light);
+            flex-shrink: 0;
+        }
+
+        .list-text {
+            font-size: 14px;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #fff;
+        }
+
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        .faq-answer {
+            padding: 0 20px 15px;
+            color: var(--text-light);
+            font-size: 14px;
+            display: none;
+            border-top: 1px solid #eee;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .artist-profile {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .artist-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <span>HKH</span> 韩京姬
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#works">作品集</a></li>
+                    <li><a href="#style">风格</a></li>
+                    <li><a href="#about">关于</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>探索韩京姬的艺术世界</h1>
+                <p>感受细腻笔触下的情感共鸣与独特叙事风格。韩京姬作为韩国知名网络漫画家，以其独特的画风和深刻的故事内涵吸引了全球众多读者。</p>
+                <a href="#works" class="btn">浏览作品</a>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Left Content -->
+            <div class="main-content">
+                
+                <!-- Artist Intro -->
+                <section id="about">
+                    <h2 class="section-title">艺术家简介</h2>
+                    <div class="artist-profile">
+                        <img src="https://picsum.photos/seed/artist_face/200/200" alt="韩京姬" class="artist-avatar">
+                        <div class="artist-info">
+                            <h2>韩京姬 (Han Gyeong-hui)</h2>
+                            <div class="artist-tags">
+                                <span class="tag">韩国漫画家</span>
+                                <span class="tag">剧情大师</span>
+                                <span class="tag">网络漫画</span>
+                            </div>
+                            <p>韩京姬是韩国网络漫画界极具影响力的人物之一。她的作品通常以现实主义的笔触描绘人物内心世界，擅长通过细腻的人物刻画和复杂的情感纠葛来吸引读者。虽然具体作品列表可能因平台而异，但她的创作理念始终围绕“真实”与“人性”展开。</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Works Gallery -->
+                <section id="works">
+                    <h2 class="section-title">代表作品精选</h2>
+                    <p style="margin-bottom: 20px; color: #666;">韩京姬的作品风格多变，涵盖了爱情、悬疑及生活流等多种题材。以下展示其部分具有代表性的作品概念与风格展示：</p>
+                    <div class="works-grid">
+                        <article class="work-card">
+                            <img src="https://picsum.photos/seed/work1/300/420" alt="作品封面" class="work-cover">
+                            <div class="work-info">
+                                <h3 class="work-title">都市情感系列</h3>
+                                <p class="work-meta">爱情 / 现实向</p>
+                            </div>
+                        </article>
+                        <article class="work-card">
+                            <img src="https://picsum.photos/seed/work2/300/420" alt="作品封面" class="work-cover">
+                            <div class="work-info">
+                                <h3 class="work-title">深夜咖啡馆</h3>
+                                <p class="work-meta">治愈 / 剧情</p>
+                            </div>
+                        </article>
+                        <article class="work-card">
+                            <img src="https://picsum.photos/seed/work3/300/420" alt="作品封面" class="work-cover">
+                            <div class="work-info">
+                                <h3 class="work-title">迷雾中的信</h3>
+                                <p class="work-meta">悬疑 / 惊悚</p>
+                            </div>
+                        </article>
+                        <article class="work-card">
+                            <img src="https://picsum.photos/seed/work4/300/420" alt="作品封面" class="work-cover">
+                            <div class="work-info">
+                                <h3 class="work-title">青春的回响</h3>
+                                <p class="work-meta">怀旧 / 成长</p>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Style & Techniques -->
+                <section id="style">
+                    <h2 class="section-title">艺术风格解析</h2>
+                    <div style="background: var(--card-bg); padding: 25px; border-radius: var(--border-radius); border-left: 4px solid var(--accent-color);">
+                        <h3>线条与构图</h3>
+                        <p style="margin-top: 10px;">韩京姬的画风通常以流畅的线条为主，注重面部表情的微妙变化。在构图上，她善于利用留白来营造氛围，使画面既有张力又不失透气感。人物造型往往具有鲜明的辨识度，既写实又带有一定的理想化美感。</p>
+                        <br>
+                        <h3>色彩运用</h3>
+                        <p style="margin-top: 10px;">她的作品色彩搭配通常较为克制，多使用低饱和度的色调来表现忧郁或温暖的情感基调。色彩的过渡自然，增强了画面的故事性。</p>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <!-- Quick Info -->
+                <div class="sidebar-card">
+                    <h3>快速导航</h3>
+                    <ul>
+                        <li class="list-item">
+                            <div class="list-icon">📖</div>
+                            <div class="list-text">最新连载更新</div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon">⭐</div>
+                            <div class="list-text">人气作品排行</div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon">🎨</div>
+                            <div class="list-text">原画设定集</div>
+                        </li>
+                        <li class="list-item">
+                            <div class="list-icon">📅</div>
+                            <div class="list-text">官方活动日程</div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- FAQ -->
+                <div class="sidebar-card">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">在哪里可以阅读韩京姬的作品？ <span>+</span></div>
+                        <div class="faq-answer">韩京姬的作品主要发布于韩国及国际主流的网络漫画平台。建议关注其官方授权平台以获取最新正版内容。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">韩京姬是真人还是虚构角色？ <span>+</span></div>
+                        <div class="faq-answer">韩京姬是一位真实存在的韩国漫画家，并非虚构角色。她的作品在韩国网络漫画社区中拥有很高的人气。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFaq(this)">如何联系作者或官方？ <span>+</span></div>
+                        <div class="faq-answer">通常可以通过漫画平台提供的粉丝信箱或社交媒体账号进行联系，但请注意尊重作者的创作时间和隐私。</div>
+                    </div>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div style="background: #eee; height: 250px; display: flex; align-items: center; justify-content: center; color: #999; border-radius: var(--border-radius);">
+                    广告位 / 合作展示
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>韩京姬 HKH</h4>
+                <p style="color: #bdc3c7; font-size: 14px; line-height: 1.8;">
+                    致力于通过漫画传递情感与故事。<br>
+                    感谢每一位读者的支持与陪伴。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>探索</h4>
+                <ul>
+                    <li><a href="#">作品列表</a></li>
+                    <li><a href="#">画集购买</a></li>
+                    <li><a href="#">周边商品</a></li>
+                    <li><a href="#">漫画教程</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">网站介绍</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 韩京姬作品展示平台. All Rights Reserved. 本站为粉丝展示页面，非官方网站。
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const icon = element.querySelector('span');
+            
+            // Toggle current item
+            item.classList.toggle('active');
+            
+            // Toggle icon
+            if (item.classList.contains('active')) {
+                icon.textContent = '-';
+            } else {
+                icon.textContent = '+';
+            }
+
+            // Optional: Close others
+            const allItems = document.querySelectorAll('.faq-item');
+            allItems.forEach(otherItem => {
+                if (otherItem !== item) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-question span').textContent = '+';
+                }
+            });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
