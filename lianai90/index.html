@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恋爱90天 - 恋爱关系经营指南与实战攻略</title>
+    <meta name="description" content="恋爱90天专注帮助情侣建立健康关系。提供恋爱心理学、约会指南、沟通技巧、分手挽回及婚姻经营策略，助您从相识到相守走过90天关键成长期。">
+    <meta name="keywords" content="恋爱90天,恋爱攻略,约会指南,情侣相处,分手挽回,婚姻经营">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b81;
+            --primary-hover: #ff4757;
+            --secondary-color: #2f3542;
+            --bg-color: #f1f2f6;
+            --card-bg: #ffffff;
+            --text-main: #2f3542;
+            --text-light: #747d8c;
+            --border-radius: 12px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f3 0%, #ffe3e3 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            padding-right: 50px;
+            border-radius: 30px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .search-box input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(255, 107, 129, 0.1);
+        }
+
+        .search-box button {
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            height: 40px;
+            width: 40px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+            border-bottom: 1px solid #e1e1e1;
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .view-all {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            transition: var(--transition);
+        }
+
+        .view-all:hover {
+            color: var(--primary-color);
+        }
+
+        /* Article Cards */
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-image {
+            height: 180px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card-content {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-main);
+            line-height: 1.4;
+        }
+
+        .card-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #a4b0be;
+            border-top: 1px solid #f1f2f6;
+            padding-top: 12px;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .widget {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px;
+            box-shadow: var(--shadow);
+        }
+
+        .widget-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--secondary-color);
+        }
+
+        .timeline-list {
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .timeline-list::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #f1f2f6;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 20px;
+            padding-left: 15px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -25px;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 0 1px var(--primary-color);
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 4px;
+        }
+
+        .timeline-content {
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .step-list {
+            counter-reset: step-counter;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .step-item::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .step-title {
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #f1f2f6;
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary-color);
+            color: #a4b0be;
+            padding: 60px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 15px;
+            }
+            
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                恋爱<span>90天</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">新手攻略</a></li>
+                    <li><a href="#">关系进阶</a></li>
+                    <li><a href="#">情感咨询</a></li>
+                    <li><a href="#">社区论坛</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-subscribe">免费咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>90天，重塑亲密关系</h1>
+                <p>从心动到长久，科学规划恋爱进程。提供心理学依据的行动指南，助您度过磨合期，建立健康稳定的伴侣关系。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索恋爱问题，如：如何吵架、约会技巧...">
+                    <button type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Main Content Area -->
+            <div class="content-area">
+                
+                <!-- Phase 1: The Spark -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">第一阶段：热恋与磨合 (第1-30天)</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="article-grid">
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">初次约会</span>
+                                <img src="https://picsum.photos/seed/love1/400/300" alt="约会指南">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">第一次约会该去哪里？避开这3个雷区</h3>
+                                <p class="card-excerpt">环境嘈杂、过于私密或需要大量体力活动的场所都不适合初次见面，舒适和轻松才是关键。</p>
+                                <div class="card-meta">
+                                    <span>阅读 3.2k</span>
+                                    <span>2天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">心态建设</span>
+                                <img src="https://picsum.photos/seed/love2/400/300" alt="心态建设">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">保持自我：热恋期不要迷失自己</h3>
+                                <p class="card-excerpt">不要24小时秒回信息，也不要放弃原有的社交圈。健康的恋爱是两个完整个体的结合。</p>
+                                <div class="card-meta">
+                                    <span>阅读 2.8k</span>
+                                    <span>5天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">话题库</span>
+                                <img src="https://picsum.photos/seed/love3/400/300" alt="话题库">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">聊天冷场怎么办？这里有50个万能话题</h3>
+                                <p class="card-excerpt">分享童年趣事、讨论近期电影或畅想未来旅行，避免查户口式的提问。</p>
+                                <div class="card-meta">
+                                    <span>阅读 5.1k</span>
+                                    <span>1周前</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Phase 2: Deepening -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">第二阶段：深入了解与承诺 (第31-60天)</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="article-grid">
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">三观契合</span>
+                                <img src="https://picsum.photos/seed/love4/400/300" alt="三观契合">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">如何判断两个人是否合适？看这5个指标</h3>
+                                <p class="card-excerpt">除了性格，消费观、生活习惯和情绪处理方式是决定能否长久的关键因素。</p>
+                                <div class="card-meta">
+                                    <span>阅读 4.5k</span>
+                                    <span>3天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">冲突处理</span>
+                                <img src="https://picsum.photos/seed/love5/400/300" alt="冲突处理">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">吵架是为了解决问题，而不是赢</h3>
+                                <p class="card-excerpt">学会“非暴力沟通”，避免人身攻击，关注感受而非指责行为。</p>
+                                <div class="card-meta">
+                                    <span>阅读 6.2k</span>
+                                    <span>1周前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">礼物指南</span>
+                                <img src="https://picsum.photos/seed/love6/400/300" alt="礼物指南">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">礼物不在于贵重，在于“懂你”</h3>
+                                <p class="card-excerpt">回忆他/她随口提过的小喜好，或者一本共同想读的书，往往比名牌包更动人。</p>
+                                <div class="card-meta">
+                                    <span>阅读 3.9k</span>
+                                    <span>4天前</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Phase 3: Long-term -->
+                <section>
+                    <div class="section-header">
+                        <h2 class="section-title">第三阶段：稳定与承诺 (第61-90天)</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="article-grid">
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">确认关系</span>
+                                <img src="https://picsum.photos/seed/love7/400/300" alt="确认关系">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">这90天过去了，如何确认是否要进一步发展？</h3>
+                                <p class="card-excerpt">从“我喜欢你”到“我想和你有未来”的过渡，需要考察对方的责任感和稳定性。</p>
+                                <div class="card-meta">
+                                    <span>阅读 2.1k</span>
+                                    <span>2天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">未来规划</span>
+                                <img src="https://picsum.photos/seed/love8/400/300" alt="未来规划">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">谈钱伤感情？聊聊财务规划其实很重要</h3>
+                                <p class="card-excerpt">公开透明地讨论储蓄、债务和消费习惯，是婚前或长期伴侣关系的必修课。</p>
+                                <div class="card-meta">
+                                    <span>阅读 5.6k</span>
+                                    <span>5天前</span>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-image">
+                                <span class="card-tag">异地恋</span>
+                                <img src="https://picsum.photos/seed/love9/400/300" alt="异地恋">
+                            </div>
+                            <div class="card-content">
+                                <h3 class="card-title">异地恋坚持过90天，如何维持热度？</h3>
+                                <p class="card-excerpt">制定共同目标，保持视频频率，不要让“等待”成为消耗感情的借口。</p>
+                                <div class="card-meta">
+                                    <span>阅读 1.8k</span>
+                                    <span>1周前</span>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq-section">
+                    <div class="section-header">
+                        <h2 class="section-title">常见问题解答</h2>
+                    </div>
+                    <div class="faq-list">
+                        <div class="faq-item active">
+                            <div class="faq-question">如果90天还没确定关系，是不是没戏了？</div>
+                            <div class="faq-answer">
+                                <p>不一定。90天只是一个参考周期，不同性格和节奏的人需要的时间不同。重点在于双方是否在互相了解中感到舒适和成长。</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">热恋期过了感觉很平淡怎么办？</div>
+                            <div class="faq-answer">
+                                <p>这是进入“细水长流”阶段的正常表现。此时应增加共同体验，尝试新鲜事物，而不是怀念过去的激情。</p>
+                            </div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-question">如何判断对方是否值得托付？</div>
+                            <div class="faq-answer">
+                                <p>观察他在压力下的表现、对待服务员的态度，以及他是否尊重你的想法和边界。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Sidebar -->
+            <aside>
+                <div class="widget">
+                    <h3 class="widget-title">90天恋爱进度条</h3>
+                    <div class="timeline-list">
+                        <div class="timeline-item">
+                            <div class="timeline-date">Day 1-7</div>
+                            <div class="timeline-content">初识与印象管理</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Day 8-21</div>
+                            <div class="timeline-content">频繁接触与升温</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Day 22-45</div>
+                            <div class="timeline-content">暴露缺点与磨合</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Day 46-60</div>
+                            <div class="timeline-content">深度信任建立</div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Day 61-90</div>
+                            <div class="timeline-content">关系确认与规划</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3 class="widget-title">关键步骤指南</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <div class="step-title">坦诚沟通</div>
+                            <div class="step-desc">分享你的底线和期望。</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-title">建立仪式感</div>
+                            <div class="step-desc">每周固定的约会时间。</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-title">共同成长</div>
+                            <div class="step-desc">支持对方的个人发展。</div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-title">互相包容</div>
+                            <div class="step-desc">接受不完美的对方。</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget" style="background-color: #fff0f3;">
+                    <h3 class="widget-title" style="color: var(--primary-color);">情感诊断</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 15px;">还在为感情烦恼？点击获取专业建议。</p>
+                    <a href="#" class="btn-subscribe" style="display: block; text-align: center; width: 100%;">开始诊断</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 15px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    恋爱<span>90天</span>
+                </div>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    专注为年轻情侣提供科学、实用的恋爱关系经营方案，陪伴您走过人生最美好的90天成长期。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">新手入门</a></li>
+                    <li><a href="#">约会技巧</a></li>
+                    <li><a href="#">情感咨询</a></li>
+                    <li><a href="#">社区问答</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <ul>
+                    <li><a href="#">团队介绍</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 恋爱90天. All rights reserved. 本站内容仅供参考，不构成专业医疗或心理咨询建议。</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                          </html>
