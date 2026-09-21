@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉峪关团购-本地生活优惠与拼团服务平台</title>
+    <meta name="description" content="嘉峪关团购平台提供本地餐饮美食、休闲娱乐、酒店民宿、生活服务及旅游特产等超值团购优惠信息，支持在线预订与拼团，助您轻松省钱，享受品质生活。">
+    <meta name="keywords" content="嘉峪关团购,嘉峪关美食团购,嘉峪关酒店团购,嘉峪关景点门票,嘉峪关生活服务">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #e63946; /* 活力红，适合团购促销 */
+            --secondary-color: #1d3557; /* 深蓝，用于导航和标题 */
+            --accent-color: #f1faee;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #f8f9fa;
+            --bg-card: #ffffff;
+            --spacing-unit: 16px;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 顶部导航 */
+        .site-header {
+            background-color: var(--bg-card);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        .main-nav ul {
+            display: flex;
+            gap: 32px;
+        }
+
+        .main-nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        .main-nav a:hover, .main-nav a.active {
+            color: var(--primary-color);
+        }
+
+        .main-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -24px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .btn-login {
+            padding: 8px 20px;
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .btn-login:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-join {
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .btn-join:hover {
+            background-color: #c92a37;
+        }
+
+        /* Hero 区域 */
+        .hero-section {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #457b9d 100%);
+            color: white;
+            padding: 60px 0;
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .hero-text p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .search-box {
+            display: flex;
+            background: white;
+            border-radius: 50px;
+            padding: 6px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 50px;
+            outline: none;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #c92a37;
+        }
+
+        /* 分类图标 */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 24px;
+            margin-top: -60px;
+            position: relative;
+            z-index: 3;
+            margin-bottom: 40px;
+        }
+
+        .category-item {
+            background: white;
+            padding: 24px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        .category-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .category-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* 通用 Section */
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 24px;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary-color);
+            position: relative;
+            padding-left: 16px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 4px;
+            bottom: 4px;
+            width: 4px;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        /* 热门推荐卡片 */
+        .deal-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .deal-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .deal-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .deal-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #eee;
+        }
+
+        .deal-content {
+            padding: 16px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .deal-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #ffe5e5;
+            color: var(--primary-color);
+            font-size: 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            width: fit-content;
+        }
+
+        .deal-title {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .deal-info {
+            margin-top: auto;
+            padding-top: 12px;
+            border-top: 1px solid #eee;
+        }
+
+        .deal-price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .deal-price {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        .deal-price small {
+            font-size: 12px;
+        }
+
+        .deal-original {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 12px;
+        }
+
+        .deal-btn {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 12px;
+            font-size: 14px;
+        }
+
+        .deal-btn:hover {
+            background-color: #1a2d4a;
+        }
+
+        /* 特色专栏 */
+        .feature-section {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            padding: 16px;
+            border-radius: 8px;
+            transition: background 0.3s;
+        }
+
+        .feature-item:hover {
+            background-color: #f8f9fa;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #e3f2fd;
+            color: var(--secondary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .feature-text h3 {
+            font-size: 18px;
+            margin-bottom: 4px;
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* 底部 */
+        .site-footer {
+            background-color: #1d3557;
+            color: #a8dadc;
+            padding: 60px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .header-inner {
+                height: auto;
+                flex-direction: column;
+                padding: 12px 0;
+                gap: 12px;
+            }
+
+            .main-nav ul {
+                gap: 16px;
+                font-size: 14px;
+            }
+
+            .user-actions {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .deal-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding: 40px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>🚀</span> 嘉峪关团购
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">美食餐饮</a></li>
+                    <li><a href="#">休闲娱乐</a></li>
+                    <li><a href="#">酒店民宿</a></li>
+                    <li><a href="#">本地服务</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="btn-login">登录</a>
+                <a href="#" class="btn-join">商家入驻</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero 区域 -->
+        <section class="hero-section">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>发现嘉峪关周边的超值优惠</h1>
+                    <p>汇聚本地商家精选团购套餐，无论是聚餐、KTV还是旅游住宿，都能帮您省下一大笔。</p>
+                    <div class="search-box">
+                        <input type="text" placeholder="搜索餐厅、酒店、景点...">
+                        <button type="button">搜索</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 分类导航 -->
+            <div class="category-grid">
+                <div class="category-item">
+                    <span class="category-icon">🍜</span>
+                    <span class="category-name">特色美食</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🍺</span>
+                    <span class="category-name">酒吧KTV</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🏨</span>
+                    <span class="category-name">酒店住宿</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🎬</span>
+                    <span class="category-name">电影休闲</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">💆‍♂️</span>
+                    <span class="category-name">美容养生</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🚗</span>
+                    <span class="category-name">汽车服务</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🛒</span>
+                    <span class="category-name">超市百货</span>
+                </div>
+                <div class="category-item">
+                    <span class="category-icon">🎁</span>
+                    <span class="category-name">休闲娱乐</span>
+                </div>
+            </div>
+
+            <!-- 热门推荐 -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">热门推荐</h2>
+                    <a href="#" class="section-more">查看更多 &gt;</a>
+                </div>
+                <div class="deal-grid">
+                    <!-- 卡片 1 -->
+                    <article class="deal-card">
+                        <img src="https://picsum.photos/seed/food1/400/300" alt="嘉峪关特色烤肉套餐" class="deal-img">
+                        <div class="deal-content">
+                            <span class="deal-tag">超值套餐</span>
+                            <h3 class="deal-title">嘉峪关老字号烤肉套餐 4人餐 含酒水饮料</h3>
+                            <div class="deal-info">
+                                <div class="deal-price-row">
+                                    <span class="deal-price">¥128<small>/份</small></span>
+                                    <span class="deal-original">原价¥298</span>
+                                </div>
+                                <a href="#" class="deal-btn">立即抢购</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 卡片 2 -->
+                    <article class="deal-card">
+                        <img src="https://picsum.photos/seed/hotel1/400/300" alt="嘉峪关商务酒店住宿" class="deal-img">
+                        <div class="deal-content">
+                            <span class="deal-tag">限时特惠</span>
+                            <h3 class="deal-title">嘉峪关全季酒店 城市便捷商务大床房1晚</h3>
+                            <div class="deal-info">
+                                <div class="deal-price-row">
+                                    <span class="deal-price">¥199<small>/晚</small></span>
+                                    <span class="deal-original">原价¥358</span>
+                                </div>
+                                <a href="#" class="deal-btn">立即预订</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 卡片 3 -->
+                    <article class="deal-card">
+                        <img src="https://picsum.photos/seed/park1/400/300" alt="嘉峪关关城门票" class="deal-img">
+                        <div class="deal-content">
+                            <span class="deal-tag">景点门票</span>
+                            <h3 class="deal-title">嘉峪关关城景区门票 + 长城第一墩通票</h3>
+                            <div class="deal-info">
+                                <div class="deal-price-row">
+                                    <span class="deal-price">¥110<small>/张</small></span>
+                                    <span class="deal-original">原价¥120</span>
+                                </div>
+                                <a href="#" class="deal-btn">立即抢购</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 卡片 4 -->
+                    <article class="deal-card">
+                        <img src="https://picsum.photos/seed/massage/400/300" alt="嘉峪关足浴按摩" class="deal-img">
+                        <div class="deal-content">
+                            <span class="deal-tag">养生保健</span>
+                            <h3 class="deal-title">至尊足道 60分钟精油按摩 套餐体验</h3>
+                            <div class="deal-info">
+                                <div class="deal-price-row">
+                                    <span class="deal-price">¥68<small>/人</small></span>
+                                    <span class="deal-original">原价¥158</span>
+                                </div>
+                                <a href="#" class="deal-btn">立即预约</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 平台优势 -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">为什么选择嘉峪关团购</h2>
+                </div>
+                <div class="feature-section">
+                    <div class="feature-item">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-text">
+                            <h3>价格透明，拒绝套路</h3>
+                            <p>所有团购套餐明码标价，明确标注原价与折扣，让您消费得明明白白。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-text">
+                            <h3>先行赔付，售后无忧</h3>
+                            <p>支持在线退款与售后保障，遇到问题我们帮您解决，购物更放心。</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚀</div>
+                        <div class="feature-text">
+                            <h3>极速核销，便捷省心</h3>
+                            <p>支持电子券核销，到店扫码即可使用，无需排队，即买即用。</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 常见问题 -->
+            <section>
+                <div class="section-header">
+                    <h2 class="section-title">常见问题</h2>
+                </div>
+                <div style="background: white; padding: 24px; border-radius: 8px; box-shadow: var(--shadow);">
+                    <details style="margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--secondary-color);">如何使用购买的团购券？</summary>
+                        <p style="margin-top: 8px; color: var(--text-light); padding-left: 16px;">购买成功后，您可以在“我的订单”中找到电子券码。到店消费时，直接出示手机上的二维码给商家扫码核销即可。</p>
+                    </details>
+                    <details style="margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--secondary-color);">团购券可以转让吗？</summary>
+                        <p style="margin-top: 8px; color: var(--text-light); padding-left: 16px;">大部分团购券支持转让，您可以在订单详情页点击“转让”按钮，将链接发送给朋友。</p>
+                    </details>
+                    <details style="margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px;">
+                        <summary style="cursor: pointer; font-weight: 600; color: var(--secondary-color);">如果商家无法核销怎么办？</summary>
+                        <p style="margin-top: 8px; color: var(--text-light); padding-left: 16px;">请先联系商家确认营业状态。如商家拒绝核销，请联系平台客服，我们将为您提供退款服务。</p>
+                    </details>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台介绍</a></li>
+                        <li><a href="#">合作商家</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>帮助中心</h4>
+                    <ul>
+                        <li><a href="#">购买指南</a></li>
+                        <li><a href="#">退款政策</a></li>
+                        <li><a href="#">联系客服</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>商家服务</h4>
+                    <ul>
+                        <li><a href="#">商家入驻</a></li>
+                        <li><a href="#">营销推广</a></li>
+                        <li><a href="#">数据报表</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>客服热线：0937-1234567</li>
+                        <li>电子邮箱：service@jiayuguan.com</li>
+                        <li>工作时间：9:00 - 21:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 嘉峪关团购网 版权所有 | 陇ICP备12345678号</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
