@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="GIF动态图片揉胸 - 提供高质量GIF动图资源，包含动作演示、技术解析及高清素材下载，满足用户对动态视觉内容的浏览与收藏需求。">
+    <meta name="keywords" content="gif动态图片揉胸, GIF动图, 动态素材, 动作演示, 高清GIF">
+    <title>GIF动态图片揉胸 - 高清动图素材与动作演示</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-bg: #2d3436;
+            --light-bg: #f7f9fc;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --radius: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--light-bg);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff0f0 0%, #e3f2fd 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 2px solid #ddd;
+            border-radius: 50px;
+            overflow: hidden;
+        }
+
+        .search-box input {
+            flex: 1;
+            padding: 15px 25px;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0 30px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: #e05555;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+
+        /* Sidebar */
+        aside {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            height: fit-content;
+        }
+
+        aside h3 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .category-list {
+            list-style: none;
+        }
+
+        .category-list li {
+            margin-bottom: 10px;
+        }
+
+        .category-list a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            transition: background 0.2s;
+        }
+
+        .category-list a:hover, .category-list a.active {
+            background-color: #fff0f0;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .stats {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-media {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-media img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .card:hover .card-media img {
+            transform: scale(1.05);
+        }
+
+        .play-icon {
+            position: absolute;
+            font-size: 3rem;
+            color: rgba(255, 255, 255, 0.8);
+            pointer-events: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .card-body {
+            padding: 15px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--dark-bg);
+        }
+
+        .card-desc {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: #888;
+            border-top: 1px solid #f5f5f5;
+            padding-top: 10px;
+        }
+
+        .btn-download {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            overflow-x: auto;
+            padding-bottom: 5px;
+        }
+
+        .filter-btn {
+            padding: 8px 20px;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 20px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Features Section */
+        .features {
+            background-color: var(--card-bg);
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .features-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .feature-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .feature-item p {
+            color: var(--text-light);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-bg);
+            color: #b2bec3;
+            padding: 50px 20px 20px;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none; /* Simplified for mobile */
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                GIF动态图片库
+            </div>
+            <nav class="nav-links">
+                <a href="#">首页</a>
+                <a href="#">分类浏览</a>
+                <a href="#">高清专区</a>
+                <a href="#">关于我们</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>GIF动态图片揉胸</h1>
+            <p>探索海量高质量GIF动图资源，精选动作演示与视觉素材，为您提供流畅的浏览体验与下载服务。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索GIF、动作、演示...">
+                <button>搜索</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <aside>
+            <h3>分类导航</h3>
+            <ul class="category-list">
+                <li><a href="#" class="active">全部资源</a></li>
+                <li><a href="#">动作演示</a></li>
+                <li><a href="#">技术解析</a></li>
+                <li><a href="#">高清素材</a></li>
+                <li><a href="#">压缩包下载</a></li>
+            </ul>
+            <div class="stats">
+                <p>总资源量: 12,450</p>
+                <p>今日更新: 86</p>
+                <p>用户好评: 99%</p>
+            </div>
+        </aside>
+
+        <section class="content-area">
+            <div class="filter-bar">
+                <button class="filter-btn active">最新发布</button>
+                <button class="filter-btn">最热推荐</button>
+                <button class="filter-btn">高清大图</button>
+                <button class="filter-btn">短GIF</button>
+                <button class="filter-btn">长GIF</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Card 1 -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://picsum.photos/seed/gif1/400/300" alt="GIF动态图片示例">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">动作演示 G01</h3>
+                        <p class="card-desc">展示流畅的动作细节，适用于技术解析与参考，高清画质无水印。</p>
+                        <div class="card-meta">
+                            <span>2.4MB</span>
+                            <a href="#" class="btn-download">下载GIF</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://picsum.photos/seed/gif2/400/300" alt="GIF动态图片示例">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">动态视觉素材 B02</h3>
+                        <p class="card-desc">经过压缩处理的短GIF，适合快速加载与社交媒体分享使用。</p>
+                        <div class="card-meta">
+                            <span>450KB</span>
+                            <a href="#" class="btn-download">下载GIF</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://picsum.photos/seed/gif3/400/300" alt="GIF动态图片示例">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">高清解析图 H05</h3>
+                        <p class="card-desc">高分辨率GIF动图，细节清晰，适合专业设计参考与教学演示。</p>
+                        <div class="card-meta">
+                            <span>15MB</span>
+                            <a href="#" class="btn-download">下载GIF</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://picsum.photos/seed/gif4/400/300" alt="GIF动态图片示例">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">综合演示 D12</h3>
+                        <p class="card-desc">包含多阶段变化的动态图，完整记录动作全过程。</p>
+                        <div class="card-meta">
+                            <span>3.1MB</span>
+                            <a href="#" class="btn-download">下载GIF</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://picsum.photos/seed/gif5/400/300" alt="GIF动态图片示例">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">视觉特效 S09</h3>
+                        <p class="card-desc">带有视觉特效的GIF素材，色彩鲜艳，适合创意项目使用。</p>
+                        <div class="card-meta">
+                            <span>5.6MB</span>
+                            <a href="#" class="btn-download">下载GIF</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="card">
+                    <div class="card-media">
+                        <img src="https://picsum.photos/seed/gif6/400/300" alt="GIF动态图片示例">
+                        <div class="play-icon">▶</div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">标准演示 C01</h3>
+                        <p class="card-desc">标准比例GIF，通用性强，适合网页设计与排版使用。</p>
+                        <div class="card-meta">
+                            <span>1.2MB</span>
+                            <a href="#" class="btn-download">下载GIF</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-item">
+                <div class="feature-icon">⚡</div>
+                <h4>极速加载</h4>
+                <p>优化的GIF压缩算法，确保在移动端也能流畅播放，不卡顿。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">💎</div>
+                <h4>高清画质</h4>
+                <p>提供多种分辨率选择，从标清到4K，满足不同场景需求。</p>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon">🔒</div>
+                <h4>安全下载</h4>
+                <p>所有资源经过病毒扫描，绿色无毒，放心下载使用。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h5>GIF动态图片库</h5>
+                <p style="font-size: 0.9rem; line-height: 1.6;">
+                    专注于提供高质量的GIF动图素材与动作演示资源，致力于打造最专业的动态视觉内容平台。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h5>快速链接</h5>
+                <ul>
+                    <li><a href="#">关于我们</a></li>
+                    <li><a href="#">版权声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">联系方式</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>资源分类</h5>
+                <ul>
+                    <li><a href="#">动作演示</a></li>
+                    <li><a href="#">视觉特效</a></li>
+                    <li><a href="#">高清素材</a></li>
+                    <li><a href="#">压缩包下载</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2023 GIF动态图片库. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Simple script to handle filter button active state
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Simple search interaction simulation
+            const searchBtn = document.querySelector('.search-box button');
+            const searchInput = document.querySelector('.search-box input');
+            
+            searchBtn.addEventListener('click', () => {
+                const val = searchInput.value;
+                if(val) {
+                    alert('正在搜索: ' + val);
+                }
+            });
+            
+            searchInput.addEventListener('keypress', (e) => {
+                if(e.key === 'Enter') {
+                    searchBtn.click();
+                }
+            });
+        });
+    </script>
+</body>
+                                              </html>
